@@ -10,6 +10,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setTheme(R.style.Theme_Leaderboard)
         binding = DataBindingUtil.setContentView(this,R.layout.activity_main)
     }
 }

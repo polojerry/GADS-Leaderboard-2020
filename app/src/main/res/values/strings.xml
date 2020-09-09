@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Leaderboard</string>
+    <string name="title_leader_board">Leaderboard</string>
+    <string name="title_submit">Submit</string>
 </resources>
