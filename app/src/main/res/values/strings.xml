@@ -2,4 +2,6 @@
     <string name="app_name">Leaderboard</string>
     <string name="title_leader_board">Leaderboard</string>
     <string name="title_submit">Submit</string>
+    <string name="format_learning_hours">%d learning hours,</string>
+    <string name="format_skill_iq_score">%d skill IQ Score,</string>
 </resources>

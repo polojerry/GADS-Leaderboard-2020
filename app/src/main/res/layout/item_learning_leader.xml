@@ -29,7 +29,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/badge_top_learner" />
+                app:srcCompat="@drawable/badge_top_learner"
+                imageUrl="@{learningLeader.badgeUrl}"/>
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -43,7 +44,8 @@
                 app:layout_constraintStart_toEndOf="@+id/image_learning_leader"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="packed"
-                tools:text="John Doe" />
+                tools:text="John Doe"
+                android:text="@{learningLeader.name}"/>
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -55,7 +57,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/image_learning_leader"
                 app:layout_constraintTop_toBottomOf="@+id/text_learning_leader_name"
-                tools:text="223 learning hours," />
+                tools:text="223 learning hours,"
+                learningHours="@{learningLeader.hours}"/>
 
 
             <androidx.appcompat.widget.AppCompatTextView
@@ -67,7 +70,8 @@
                 app:layout_constraintBottom_toBottomOf="@+id/text_learning_leader_learning_hours"
                 app:layout_constraintStart_toEndOf="@+id/text_learning_leader_learning_hours"
                 app:layout_constraintTop_toTopOf="@+id/text_learning_leader_learning_hours"
-                tools:text="Kenya" />
+                tools:text="Kenya"
+                android:text="@{learningLeader.country}"/>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
