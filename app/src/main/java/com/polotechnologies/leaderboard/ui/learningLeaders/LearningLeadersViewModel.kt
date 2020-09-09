@@ -1,20 +1,19 @@
 package com.polotechnologies.leaderboard.ui.learningLeaders
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.polotechnologies.leaderboard.dataModel.LearningLeader
 import com.polotechnologies.leaderboard.repository.LeadersBoardRepository
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
+import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onStart
-import kotlinx.coroutines.launch
 
-class LearningLeadersViewModel : ViewModel() {
-    private val leadersBoardRepository = LeadersBoardRepository()
+@ExperimentalCoroutinesApi
+class LearningLeadersViewModel @ViewModelInject constructor(private val leadersBoardRepository : LeadersBoardRepository)
+    : ViewModel() {
 
     private val _learningLeadersLeaders = MutableLiveData<List<LearningLeader>>()
     val learningLeadersLeaders: LiveData<List<LearningLeader>>

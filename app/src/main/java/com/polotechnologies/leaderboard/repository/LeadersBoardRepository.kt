@@ -3,16 +3,18 @@ package com.polotechnologies.leaderboard.repository
 import com.polotechnologies.leaderboard.dataModel.LearningLeader
 import com.polotechnologies.leaderboard.dataModel.SkillIqLeader
 import com.polotechnologies.leaderboard.network.LeadersBoardApi
+import com.polotechnologies.leaderboard.network.LeadersBoardApiService
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import javax.inject.Inject
 
-class LeadersBoardRepository {
-
-    private val leadersBoardApi = LeadersBoardApi.retrofitService
+class LeadersBoardRepository
+@Inject constructor(private val leadersBoardApi : LeadersBoardApiService) {
 
     @ExperimentalCoroutinesApi
     fun getLearningLeaders() : Flow<List<LearningLeader>>{

@@ -11,7 +11,9 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import com.polotechnologies.leaderboard.R
 import com.polotechnologies.leaderboard.databinding.HostLeaderBoardFragmentBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HostLeaderBoardFragment : Fragment() {
 
     private lateinit var viewModel: HostLeaderBoardViewModel

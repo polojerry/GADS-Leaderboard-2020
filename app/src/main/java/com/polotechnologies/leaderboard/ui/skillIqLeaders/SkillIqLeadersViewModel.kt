@@ -1,5 +1,6 @@
 package com.polotechnologies.leaderboard.ui.skillIqLeaders
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -12,10 +13,9 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onStart
 
 @ExperimentalCoroutinesApi
-class SkillIqLeadersViewModel : ViewModel() {
+class SkillIqLeadersViewModel @ViewModelInject constructor(private val leadersBoardRepository : LeadersBoardRepository)
+    : ViewModel() {
 
-
-    private val leadersBoardRepository = LeadersBoardRepository()
 
     private val _skillIqLeaders = MutableLiveData<List<SkillIqLeader>>()
     val skillIqLeaders: LiveData<List<SkillIqLeader>>
