@@ -6,14 +6,17 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.polotechnologies.leaderboard.R
 import com.polotechnologies.leaderboard.databinding.LearningLeadersFragmentBinding
+import com.polotechnologies.leaderboard.ui.skillIqLeaders.SkillIqLeadersRecyclerAdapter
 
 class LearningLeadersFragment : Fragment() {
 
-    private lateinit var viewModel: LearningLeadersViewModel
+    private val viewModel: LearningLeadersViewModel by viewModels()
 
     private lateinit var binding: LearningLeadersFragmentBinding
+    private lateinit var learningLeadersRecyclerAdapter: LearningLeadersRecyclerAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -22,7 +25,18 @@ class LearningLeadersFragment : Fragment() {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.learning_leaders_fragment, container, false)
 
+        learningLeadersRecyclerAdapter = LearningLeadersRecyclerAdapter()
+        binding.recyclerViewLearningLeaders.adapter = learningLeadersRecyclerAdapter
+
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel.learningLeadersLeaders.observe(viewLifecycleOwner, { skillIqLeaders ->
+            learningLeadersRecyclerAdapter.submitList(skillIqLeaders)
+        })
+    }
+
 
 }
