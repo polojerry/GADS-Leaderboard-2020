@@ -1,5 +1,6 @@
 package com.polotechnologies.leaderboard.di
 
+import com.polotechnologies.leaderboard.database.LeaderboardDatabase
 import com.polotechnologies.leaderboard.network.LeadersBoardApi
 import com.polotechnologies.leaderboard.network.LeadersBoardApiService
 import com.polotechnologies.leaderboard.repository.LeadersBoardRepository
@@ -21,5 +22,9 @@ object LeadersModule {
     @Provides
     fun providesLeadersboardRepository(leadersBoardApi: LeadersBoardApiService) =
             LeadersBoardRepository(leadersBoardApi)
+
+    @Provides
+    fun providesLearningLeadersDao(database : LeaderboardDatabase) =
+            database.learningLeadersDao
 
 }

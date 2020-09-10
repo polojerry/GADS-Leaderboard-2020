@@ -1,5 +1,6 @@
 package com.polotechnologies.leaderboard.di
 
+import com.polotechnologies.leaderboard.database.LeaderboardDatabase
 import com.polotechnologies.leaderboard.network.LeadersBoardApi
 import com.polotechnologies.leaderboard.network.LeadersBoardApiService
 import com.polotechnologies.leaderboard.network.SubmissionApi
@@ -23,4 +24,9 @@ object SubmissionModule {
     @Provides
     fun providesSubmissionRepository(submissionApi: SubmissionApiService) =
             SubmissionRepository(submissionApi)
+
+    @Provides
+    fun providesSkillIqLeadersDao(database : LeaderboardDatabase) =
+            database.skillIqLeadersDao
+
 }

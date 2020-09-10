@@ -90,7 +90,6 @@ dependencies {
     kapt "androidx.hilt:hilt-compiler:$hilt_view_model_version"
 
 }
-
 kapt {
     correctErrorTypes true
 }
