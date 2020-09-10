@@ -4,7 +4,9 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.polotechnologies.leaderboard.ui.learningLeaders.LearningLeadersFragment
 import com.polotechnologies.leaderboard.ui.skillIqLeaders.SkillIqLeadersFragment
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 
+@ExperimentalCoroutinesApi
 class LeaderBoardPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
     override fun getItemCount(): Int  = 2

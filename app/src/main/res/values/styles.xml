@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Leaderboard.SplashScreen" parent="Theme.Leaderboard">
+        <item name="android:windowBackground">@drawable/splash_screen</item>
+    </style>
+
+    <style name="Theme.Leadersboard.DarkActionBar" parent="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="colorButtonNormal">?attr/colorOnPrimary</item>
+    </style>
+
+
+    <style name="Widget.Leadersboard.Button" parent="Widget.MaterialComponents.Button">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Leadersboard.Button</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.Leadersboard.Button" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+</resources>

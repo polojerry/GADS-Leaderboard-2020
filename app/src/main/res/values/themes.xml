@@ -11,9 +11,8 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimary</item>
         <!-- Customize your theme here. -->
+
+        <item name="materialButtonStyle">@style/Widget.Leadersboard.Button</item>
     </style>
 
-    <style name="Theme.Leaderboard.SplashScreen" parent="Theme.Leaderboard">
-        <item name="android:windowBackground">@drawable/splash_screen</item>
-    </style>
 </resources>

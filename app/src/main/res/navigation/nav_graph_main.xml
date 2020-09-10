@@ -9,5 +9,14 @@
         android:id="@+id/hostLeaderBoardFragment"
         android:name="com.polotechnologies.leaderboard.ui.hostLeaderBoard.HostLeaderBoardFragment"
         android:label="HostLeaderBoardFragment"
-        tools:layout="@layout/host_leader_board_fragment"/>
+        tools:layout="@layout/host_leader_board_fragment">
+        <action
+            android:id="@+id/action_hostLeaderBoardFragment_to_submissionFragment"
+            app:destination="@id/submissionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/submissionFragment"
+        android:name="com.polotechnologies.leaderboard.ui.submission.SubmissionFragment"
+        android:label="SubmissionFragment"
+        tools:layout="@layout/submission_fragment"/>
 </navigation>

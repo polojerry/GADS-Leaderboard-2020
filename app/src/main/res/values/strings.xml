@@ -4,4 +4,9 @@
     <string name="title_submit">Submit</string>
     <string name="format_learning_hours">%d learning hours,</string>
     <string name="format_skill_iq_score">%d skill IQ Score,</string>
+    <string name="title_project_submission">Project Submission</string>
+    <string name="hint_first_name">First Name</string>
+    <string name="hint_last_name">Last Name</string>
+    <string name="hint_email_address">Email Address</string>
+    <string name="hint_project_on_github">Project on GITHUB (link)</string>
 </resources>

@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.databinding.adapters.ViewBindingAdapter.setClickListener
+import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
@@ -29,6 +31,9 @@ class HostLeaderBoardFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.host_leader_board_fragment, container, false)
+
+        setClickListener()
+
         return binding.root
     }
 
@@ -46,6 +51,13 @@ class HostLeaderBoardFragment : Fragment() {
                 1 -> tab.text = "Skill IQ Leaders"
             }
         }.attach()
+    }
+
+    private fun setClickListener(){
+        binding.layoutToolbarLeaderBoard.buttonSubmitLeaderboard.setOnClickListener {
+            findNavController().navigate(R.id.action_hostLeaderBoardFragment_to_submissionFragment)
+        }
+
     }
 
 }
