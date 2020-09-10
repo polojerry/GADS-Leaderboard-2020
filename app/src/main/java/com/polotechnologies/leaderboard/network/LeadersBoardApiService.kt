@@ -13,7 +13,7 @@ private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
 
-val retrofit: Retrofit = Retrofit.Builder()
+private val retrofit: Retrofit = Retrofit.Builder()
     .baseUrl(LEADERS_BASE_URL)
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .build()
