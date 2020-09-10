@@ -13,7 +13,7 @@ class SubmissionRepository
             submissionApi.submitProject(
                 project.firstName,
                 project.lastName,
-                /*project.emailAddress,*/
+                project.emailAddress,
                 project.projectLink
 
             )

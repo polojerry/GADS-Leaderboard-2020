@@ -19,14 +19,6 @@ private val loggingInterceptor = HttpLoggingInterceptor()
 private val clientBuilder = OkHttpClient.Builder()
     .addInterceptor(loggingInterceptor)
 
-
-/*
-OkHttpClient.Builder clientBuilder = new OkHttpClient.Builder();
-HttpLoggingInterceptor loggingInterceptor = new HttpLoggingInterceptor();
-loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
-clientBuilder.addInterceptor(loggingInterceptor);
-*/
-
 private val retrofit: Retrofit = Retrofit.Builder()
     .baseUrl("https://docs.google.com/forms/d/e/")
     .addConverterFactory(MoshiConverterFactory.create(moshi))
@@ -51,9 +43,9 @@ interface SubmissionApiService {
     suspend fun submitProject(
         @Field("entry.1405768637") firstName: String,
         @Field("entry.182464250") lastName: String,
-        /*@Field("entry.690369363") emailAddress: String,*/
+        @Field("entry.690369363") emailAddress: String,
         @Field("entry.1405045665") projectLink: String,
-    ): Void
+    )
 
 }
 

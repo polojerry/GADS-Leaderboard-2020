@@ -15,10 +15,6 @@ import kotlinx.coroutines.Job
 class SubmissionViewModel @ViewModelInject constructor(private val submissionRepository: SubmissionRepository) :
     ViewModel() {
 
-    private val _submitProject = MutableLiveData<NetworkResponse<Void>>()
-    val submitProject: LiveData<NetworkResponse<Void>>
-        get() = _submitProject
-
     private val viewModelJob = Job()
     private val viewModelScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
@@ -36,7 +32,7 @@ class SubmissionViewModel @ViewModelInject constructor(private val submissionRep
                 val response = submissionRepository.submitProject(project)
                 emit(NetworkResponse.success(response))
             } catch (exception: Exception) {
-                emit(NetworkResponse.failed(exception))
+                emit(NetworkResponse.failed<Exception>(exception))
             }
         }
 

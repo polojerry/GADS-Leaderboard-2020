@@ -1,6 +1,7 @@
 package com.polotechnologies.leaderboard.ui.submission
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -65,6 +66,7 @@ class SubmissionFragment : Fragment() {
 
                 is NetworkResponse.Failed -> {
                     Toast.makeText(requireContext(), "Failed: ${response.exception.message}", Toast.LENGTH_SHORT).show()
+                    Log.d("Submission", "Error: ${response.exception.message}")
 
                 }
             }
