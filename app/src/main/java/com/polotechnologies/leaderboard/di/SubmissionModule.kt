@@ -9,11 +9,18 @@ import com.polotechnologies.leaderboard.repository.SubmissionRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.android.components.ActivityComponent
+import dagger.hilt.android.components.FragmentComponent
 
-/*
 @Module
-@InstallIn(ApplicationComponent::class)
-object AppModule {
+@InstallIn(ActivityComponent::class)
+object SubmissionModule {
+    @Provides
+    fun providesSubmissionApiService(): SubmissionApiService {
+        return SubmissionApi.retrofitService
+    }
 
-}*/
+    @Provides
+    fun providesSubmissionRepository(submissionApi: SubmissionApiService) =
+            SubmissionRepository(submissionApi)
+}
