@@ -38,7 +38,8 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/transparent">
+        android:background="@color/transparent"
+        app:elevation="0dp">
 
 
         <com.google.android.material.appbar.MaterialToolbar
@@ -47,7 +48,8 @@
             android:layout_height="match_parent"
             android:theme="@style/Theme.Leadersboard.DarkActionBar"
             app:navigationIcon="@drawable/ic_baseline_keyboard_backspace_24"
-            android:background="@color/transparent">
+            android:background="@color/transparent"
+            app:elevation="0dp">
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/image_logo_gads_submission"

@@ -51,7 +51,8 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="@color/transparent">
+        android:background="@color/transparent"
+        app:elevation="0dp">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar_leader_board"
@@ -61,7 +62,8 @@
             app:titleMarginStart="32dp"
             app:titleTextColor="?attr/colorOnPrimary"
             android:background="@color/transparent"
-            android:theme="@style/Theme.Leadersboard.DarkActionBar">
+            android:theme="@style/Theme.Leadersboard.DarkActionBar"
+            app:elevation="0dp">
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/button_submit_leaderboard"
