@@ -1,5 +1,6 @@
 package com.polotechnologies.leaderboard.repository
 
+import android.util.Log
 import com.polotechnologies.leaderboard.dataModel.LearningLeader
 import com.polotechnologies.leaderboard.dataModel.SkillIqLeader
 import com.polotechnologies.leaderboard.database.LearningLeadersDao
@@ -38,9 +39,14 @@ class LeadersBoardRepository
             val skillIqLeader = leadersBoardApi.learningLeaders()
             emit(skillIqLeader)
         }.flowOn(Dispatchers.IO)
+            .catch{
+                Log.d(TAG, "getLearningLeaders: Error: ")
+            }
             .collect { learningLeadersList ->
                 learningLeadersDao.insertAll(*learningLeadersList.asDatabaseModel())
             }
+
+
     }
 
 
@@ -49,9 +55,18 @@ class LeadersBoardRepository
             val skillIqLeader = leadersBoardApi.skillIqLeaders()
             emit(skillIqLeader)
         }.flowOn(Dispatchers.IO)
+            .catch{
+                Log.d(TAG, "getSkillIqLeaders: Error: ")
+            }
             .collect { skillIqLeaders ->
                 skillIqLeadersDao.insertAll(*skillIqLeaders.asDatabaseModel())
             }
     }
+
+
+    companion object {
+        const val TAG = "LeaderBoardRepository"
+    }
+
 
 }

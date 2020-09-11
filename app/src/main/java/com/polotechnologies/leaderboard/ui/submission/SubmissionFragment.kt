@@ -1,9 +1,11 @@
 package com.polotechnologies.leaderboard.ui.submission
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -60,7 +62,7 @@ class SubmissionFragment : Fragment() {
         viewModel.submitProject(project).observe(viewLifecycleOwner, { response ->
             when (response) {
                 is NetworkResponse.Loading -> {
-
+                    Toast.makeText(requireContext(), "Submitting......", Toast.LENGTH_SHORT).show()
                 }
 
                 is NetworkResponse.Success -> {
@@ -105,6 +107,9 @@ class SubmissionFragment : Fragment() {
             builder.setView(submissionDialog.root)
             builder.create()
         }
+        submitDialog.setOnDismissListener {
+            displayInputFields()
+        }
 
         hideInputFields()
         submitDialog.show()
@@ -120,6 +125,9 @@ class SubmissionFragment : Fragment() {
             builder.setView(failureDialog.root)
             builder.create()
         }
+        alertDialog.setOnDismissListener {
+            displayInputFields()
+        }
         hideInputFields()
         alertDialog.show()
 
@@ -133,6 +141,9 @@ class SubmissionFragment : Fragment() {
             val failureDialog = DialogSubmissionErrorBinding.inflate(layoutInflater)
             builder.setView(failureDialog.root)
             builder.create()
+        }
+        alertDialog.setOnDismissListener {
+            displayInputFields()
         }
         hideInputFields()
         alertDialog.show()
