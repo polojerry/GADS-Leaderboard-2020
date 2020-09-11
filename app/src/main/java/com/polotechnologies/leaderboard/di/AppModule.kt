@@ -15,6 +15,6 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideLeaderBoardDatabase(@ApplicationContext context: Context)  = getDatabase(context)
+    fun provideLeaderBoardDatabase(@ApplicationContext context: Context) = getDatabase(context)
 
 }

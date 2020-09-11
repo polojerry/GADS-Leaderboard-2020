@@ -9,7 +9,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.polotechnologies.leaderboard.R
 import com.polotechnologies.leaderboard.databinding.LearningLeadersFragmentBinding
-import com.polotechnologies.leaderboard.ui.skillIqLeaders.SkillIqLeadersRecyclerAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 

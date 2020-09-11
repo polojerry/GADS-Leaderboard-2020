@@ -5,9 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.polotechnologies.leaderboard.dataModel.LearningLeader
 import com.polotechnologies.leaderboard.dataModel.SkillIqLeader
-import com.polotechnologies.leaderboard.databinding.ItemLearningLeaderBinding
 import com.polotechnologies.leaderboard.databinding.ItemSkillIqLeaderBinding
 
 class SkillIqLeadersRecyclerAdapter :

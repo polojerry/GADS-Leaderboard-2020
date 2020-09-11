@@ -9,12 +9,12 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 @ExperimentalCoroutinesApi
 class LeaderBoardPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
-    override fun getItemCount(): Int  = 2
+    override fun getItemCount(): Int = 2
 
     override fun createFragment(position: Int): Fragment {
-        return when(position){
-            0-> LearningLeadersFragment()
-            1-> SkillIqLeadersFragment()
+        return when (position) {
+            0 -> LearningLeadersFragment()
+            1 -> SkillIqLeadersFragment()
             else -> LearningLeadersFragment()
         }
     }

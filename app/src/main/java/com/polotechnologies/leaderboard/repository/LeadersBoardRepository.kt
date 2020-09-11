@@ -21,30 +21,16 @@ class LeadersBoardRepository
     private val skillIqLeadersDao: SkillIqLeadersDao
 ) {
 
-    /*@ExperimentalCoroutinesApi
-    fun getLearningLeaders(): Flow<List<LearningLeader>> {
-        return flow {
-
-            val learnersList = leadersBoardApi.learningLeaders()
-
-            emit(learnersList)
-
-        }.flowOn(Dispatchers.Main)
-    }
-*/
+    val learningLeaders: Flow<List<LearningLeader>> =
+        learningLeadersDao.getLearningLeaders().map {
+            it.asDomainModel()
+        }
 
 
-    /* @ExperimentalCoroutinesApi
-     fun getSkillIqLeaders(): Flow<List<SkillIqLeader>> {
-         return flow {
-
-             val skillIqLeader = leadersBoardApi.skillIqLeaders()
-
-             emit(skillIqLeader)
-
-         }.flowOn(Dispatchers.Main)
-     }
-     */
+    val skillIqLeaders: Flow<List<SkillIqLeader>> =
+        skillIqLeadersDao.getSkillIqLeaders().map {
+            it.asDomainModel()
+        }
 
     suspend fun getLearningLeaders() {
 
@@ -55,10 +41,6 @@ class LeadersBoardRepository
             .collect { learningLeadersList ->
                 learningLeadersDao.insertAll(*learningLeadersList.asDatabaseModel())
             }
-
-        /*leadersBoardApi.learningLeaders().flowOn(Dispatchers.Main).collect { learningLeadersList ->
-            learningLeadersDao.insertAll(*learningLeadersList.toTypedArray())
-        }*/
     }
 
 
@@ -70,20 +52,6 @@ class LeadersBoardRepository
             .collect { skillIqLeaders ->
                 skillIqLeadersDao.insertAll(*skillIqLeaders.asDatabaseModel())
             }
-        /*leadersBoardApi.skillIqLeaders().flowOn(Dispatchers.Main).collect { skillIqLeaders ->
-            skillIqLeadersDao.insertAll(*skillIqLeaders.toTypedArray())
-        }*/
     }
-
-    val learningLeaders: Flow<List<LearningLeader>> =
-        learningLeadersDao.getLearningLeaders().map {
-            it.asDomainModel()
-        }
-
-
-    val skillIqLeaders: Flow<List<SkillIqLeader>> =
-        skillIqLeadersDao.getSkillIqLeaders().map {
-            it.asDomainModel()
-        }
 
 }

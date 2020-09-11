@@ -38,7 +38,7 @@ class SubmissionFragment : Fragment() {
         }
 
         binding.buttonSubmit.setOnClickListener {
-            if(validateInputs()){
+            if (validateInputs()) {
                 submitAndObserve()
             }
         }
@@ -65,7 +65,11 @@ class SubmissionFragment : Fragment() {
                 }
 
                 is NetworkResponse.Failed -> {
-                    Toast.makeText(requireContext(), "Failed: ${response.exception.message}", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(
+                        requireContext(),
+                        "Failed: ${response.exception.message}",
+                        Toast.LENGTH_SHORT
+                    ).show()
                     Log.d("Submission", "Error: ${response.exception.message}")
 
                 }
@@ -75,32 +79,32 @@ class SubmissionFragment : Fragment() {
 
     }
 
-    private fun validateInputs() : Boolean{
-        var isValid  = false
+    private fun validateInputs(): Boolean {
+        var isValid = false
 
         viewModel.firstName = binding.textInputFirstName.text.toString()
         viewModel.lastName = binding.textInputLastName.text.toString()
         viewModel.emailAddress = binding.textInputEmailAddress.text.toString()
         viewModel.githubLink = binding.textInputProjectOnGithub.text.toString()
 
-        if(viewModel.firstName == ""){
+        if (viewModel.firstName == "") {
             binding.textInputFirstName.error = "Required"
             isValid = false
         }
-        if(viewModel.lastName == ""){
+        if (viewModel.lastName == "") {
             binding.textInputLastName.error = "Required"
             isValid = false
         }
-        if(viewModel.emailAddress == ""){
+        if (viewModel.emailAddress == "") {
             binding.textInputEmailAddress.error = "Required"
             isValid = false
         }
-        if(viewModel.githubLink == ""){
+        if (viewModel.githubLink == "") {
             binding.textInputProjectOnGithub.error = "Required"
             isValid = false
         }
 
-        if(viewModel.firstName !="" && viewModel.lastName !="" && viewModel.emailAddress !="" && viewModel.githubLink !=""){
+        if (viewModel.firstName != "" && viewModel.lastName != "" && viewModel.emailAddress != "" && viewModel.githubLink != "") {
             isValid = true
         }
 

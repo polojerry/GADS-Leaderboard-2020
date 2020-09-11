@@ -36,7 +36,7 @@ object LeadersModule {
 
 
     @Provides
-    fun providesSkillIqLeadersDao(database : LeaderboardDatabase) =
+    fun providesSkillIqLeadersDao(database: LeaderboardDatabase) =
         database.skillIqLeadersDao
 
 

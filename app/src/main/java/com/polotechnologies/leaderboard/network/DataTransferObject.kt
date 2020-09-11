@@ -18,32 +18,6 @@ data class NetworkSkillIqLeadersContainer(val skillIqLeaders: List<SkillIqLeader
 /**
  * Convert Network results to database objects
  */
-/*
-fun NetworkLearningLeadersContainer.asDatabaseModel(): Array<DatabaseLearningLeader> {
-    return learningLeaders.map {
-        DatabaseLearningLeader(
-            learnerId = 0,
-            name = it.name,
-            hours = it.hours,
-            country = it.country,
-            badgeUrl = it.badgeUrl
-        )
-    }.toTypedArray()
-}
-*/
-
-/*fun NetworkSkillIqLeadersContainer.asDatabaseModel(): Array<DatabaseSkillIqLeader> {
-    return skillIqLeaders.map {
-        DatabaseSkillIqLeader(
-            learnerId = 0,
-            name = it.name,
-            score = it.score,
-            country = it.country,
-            badgeUrl = it.badgeUrl
-        )
-    }.toTypedArray()
-}*/
-
 fun List<LearningLeader>.asDatabaseModel(): Array<DatabaseLearningLeader> {
     return map {
         DatabaseLearningLeader(
