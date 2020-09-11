@@ -21,11 +21,10 @@
 * [Glide](https://github.com/bumptech/glide) Glide is a fast and efficient open source media management and image loading framework for Android that wraps media decoding, memory and disk caching, and resource pooling into a simple and easy to use interface.
 
 # Screens
-
-|<img src= "images/image_1_splash_screen.jpg" width = "280" height = "600">
-|<img src= "images/image_2_learning_leaders.jpg" width = "280" height = "600">
-|<img src= "images/image_3_skill_iq_leaders.jpg" width = "280" height = "600">
-|<img src= "images/image_4_submission.jpg" width = "280" height = "600">
-|<img src= "images/image_5_submission_dialog.jpg" width = "280" height = "600">
-|<img src= "images/image_6_submission_successful.jpg" width = "280" height = "600">
-|<img src= "images/image_7_submission_not_successful.jpg" width = "280" height = "600">
+|<img src= "images/image_1_splash_screen.png" width = "280" height = "600">
+|<img src= "images/image_2_learning_leaders.png" width = "280" height = "600">
+|<img src= "images/image_3_skill_iq_leaders.png" width = "280" height = "600">
+|<img src= "images/image_4_submission.png" width = "280" height = "600">
+|<img src= "images/image_5_submission_dialog.png" width = "280" height = "600">
+|<img src= "images/image_6_submission_successful.png" width = "280" height = "600">
+|<img src= "images/image_7_submission_not_successful.png" width = "280" height = "600">
