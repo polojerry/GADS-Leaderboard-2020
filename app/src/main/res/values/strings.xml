@@ -9,4 +9,9 @@
     <string name="hint_last_name">Last Name</string>
     <string name="hint_email_address">Email Address</string>
     <string name="hint_project_on_github">Project on GITHUB (link)</string>
+    <string name="question_mark">"?"</string>
+    <string name="submit_question_are_you_sure">Are you sure</string>
+    <string name="yes">Yes</string>
+    <string name="submit_successful">Submission Successful</string>
+    <string name="submit_not_successfull">Submission not Successful</string>
 </resources>

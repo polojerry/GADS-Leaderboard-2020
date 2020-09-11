@@ -14,6 +14,24 @@
         <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Leadersboard.Button</item>
     </style>
 
+
+    <style name="Widget.Leadersboard.TextDialog" parent="Widget.AppCompat.TextView">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+    <style name="Widget.Leadersboard.AlertDialog" parent="MaterialAlertDialog.MaterialComponents">
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.Leadersboard.MaterialDialog</item>
+    </style>
+
+
+    <style name="ShapeAppearanceOverlay.Leadersboard.MaterialDialog" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+
     <style name="ShapeAppearanceOverlay.Leadersboard.Button" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">16dp</item>

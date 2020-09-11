@@ -13,6 +13,8 @@
         <!-- Customize your theme here. -->
 
         <item name="materialButtonStyle">@style/Widget.Leadersboard.Button</item>
+
+        <item name="materialAlertDialogTheme">@style/Widget.Leadersboard.AlertDialog</item>
     </style>
 
 </resources>
