@@ -37,8 +37,8 @@ class LearningLeadersFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.learningLeadersLeaders.observe(viewLifecycleOwner, { skillIqLeaders ->
-            learningLeadersRecyclerAdapter.submitList(skillIqLeaders)
+        viewModel.learningLeaders.observe(viewLifecycleOwner, { learningLeaders ->
+            learningLeadersRecyclerAdapter.submitList(learningLeaders)
         })
     }
 

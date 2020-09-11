@@ -25,10 +25,23 @@ class SkillIqLeadersViewModel @ViewModelInject constructor(private val leadersBo
     private val viewModelScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
     init {
-        getLearningLeaders()
+        refreshSkillIqLeaders()
+        getSkillIqLeaders()
     }
 
-    private fun getLearningLeaders() {
+    private fun refreshSkillIqLeaders() {
+        viewModelScope.launch {
+            leadersBoardRepository.getSkillIqLeaders()
+        }
+    }
+
+    private fun getSkillIqLeaders()  = viewModelScope.launch{
+        leadersBoardRepository.skillIqLeaders.collect{skillIqLeadersList->
+            _skillIqLeaders.value = skillIqLeadersList
+        }
+    }
+
+    /*private fun getLearningLeaders() {
         viewModelScope.launch {
             leadersBoardRepository.getSkillIqLeaders()
                 .onStart {
@@ -39,7 +52,7 @@ class SkillIqLeadersViewModel @ViewModelInject constructor(private val leadersBo
                     _skillIqLeaders.value = skillIqLeadersList
                 }
         }
-    }
+    }*/
 
     /*val skillIqLeaders: LiveData<List<LearningLeader>> = liveData {
         leadersBoardRepository.getSkillIqLeaders()

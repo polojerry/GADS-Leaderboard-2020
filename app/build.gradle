@@ -57,6 +57,8 @@ dependencies {
 
     //Room
     implementation "androidx.room:room-ktx:$room_version"
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
 
     //Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
@@ -89,6 +91,8 @@ dependencies {
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_view_model_version"
     kapt "androidx.hilt:hilt-compiler:$hilt_view_model_version"
 
+    // Paging
+    implementation "android.arch.paging:runtime:$paging_version"
 }
 kapt {
     correctErrorTypes true

@@ -25,8 +25,4 @@ object SubmissionModule {
     fun providesSubmissionRepository(submissionApi: SubmissionApiService) =
             SubmissionRepository(submissionApi)
 
-    @Provides
-    fun providesSkillIqLeadersDao(database : LeaderboardDatabase) =
-            database.skillIqLeadersDao
-
 }

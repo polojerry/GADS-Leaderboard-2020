@@ -15,18 +15,33 @@ import kotlinx.coroutines.flow.onStart
 class LearningLeadersViewModel @ViewModelInject constructor(private val leadersBoardRepository : LeadersBoardRepository)
     : ViewModel() {
 
-    private val _learningLeadersLeaders = MutableLiveData<List<LearningLeader>>()
-    val learningLeadersLeaders: LiveData<List<LearningLeader>>
-        get() = _learningLeadersLeaders
+    private val _learningLeaders = MutableLiveData<List<LearningLeader>>()
+    val learningLeaders: LiveData<List<LearningLeader>>
+        get() = _learningLeaders
 
     private val viewModelJob = Job()
     private val viewModelScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
     init {
+        refreshLearningLeaders()
         getLearningLeaders()
     }
 
-    private fun getLearningLeaders() {
+    private fun refreshLearningLeaders() {
+        viewModelScope.launch {
+            leadersBoardRepository.getLearningLeaders()
+        }
+    }
+
+    private fun getLearningLeaders()  = viewModelScope.launch{
+        leadersBoardRepository.learningLeaders.collect{learningLeadersList->
+            _learningLeaders.value = learningLeadersList
+        }
+    }
+
+
+
+    /*private fun getLearningLeaders() {
         viewModelScope.launch {
             leadersBoardRepository.getLearningLeaders()
                 .onStart {
@@ -37,6 +52,6 @@ class LearningLeadersViewModel @ViewModelInject constructor(private val leadersB
                     _learningLeadersLeaders.value = learningLeadersLeadersList
                 }
         }
-    }
+    }*/
     
 }

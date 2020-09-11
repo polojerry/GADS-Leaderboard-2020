@@ -9,7 +9,6 @@ import com.polotechnologies.leaderboard.dataModel.SkillIqLeader
 import com.polotechnologies.leaderboard.util.Constants.DATABASE_LEADER_BOARD_NAME
 
 @Database(entities = [LearningLeader::class, SkillIqLeader::class], version = 1, exportSchema = false)
-
 abstract class LeaderboardDatabase : RoomDatabase() {
 
     abstract val learningLeadersDao: LearningLeadersDao
