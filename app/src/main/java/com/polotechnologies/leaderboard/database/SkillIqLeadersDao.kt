@@ -5,14 +5,15 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.polotechnologies.leaderboard.dataModel.SkillIqLeader
+import com.polotechnologies.leaderboard.database.entities.DatabaseSkillIqLeader
 import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface SkillIqLeadersDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertAll(vararg skillIqLeader: SkillIqLeader)
+    suspend fun insertAll(vararg skillIqLeader: DatabaseSkillIqLeader)
 
     @Query("SELECT * FROM table_skill_iq_leaders")
-    fun getSkillIqLeaders(): Flow<List<SkillIqLeader>>
+    fun getSkillIqLeaders(): Flow<List<DatabaseSkillIqLeader>>
 }

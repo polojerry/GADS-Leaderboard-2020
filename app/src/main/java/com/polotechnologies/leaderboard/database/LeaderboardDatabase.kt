@@ -6,9 +6,11 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.polotechnologies.leaderboard.dataModel.LearningLeader
 import com.polotechnologies.leaderboard.dataModel.SkillIqLeader
+import com.polotechnologies.leaderboard.database.entities.DatabaseLearningLeader
+import com.polotechnologies.leaderboard.database.entities.DatabaseSkillIqLeader
 import com.polotechnologies.leaderboard.util.Constants.DATABASE_LEADER_BOARD_NAME
 
-@Database(entities = [LearningLeader::class, SkillIqLeader::class], version = 1, exportSchema = false)
+@Database(entities = [DatabaseLearningLeader::class, DatabaseSkillIqLeader::class], version = 1, exportSchema = false)
 abstract class LeaderboardDatabase : RoomDatabase() {
 
     abstract val learningLeadersDao: LearningLeadersDao

@@ -22,10 +22,10 @@ private val retrofit: Retrofit = Retrofit.Builder()
 interface LeadersBoardApiService {
 
     @GET("/api/hours")
-    suspend fun learningLeaders() : Flow<List<LearningLeader>>
+    suspend fun learningLeaders() : List<LearningLeader>
 
     @GET(" /api/skilliq")
-    suspend fun skillIqLeaders() : Flow<List<SkillIqLeader>>
+    suspend fun skillIqLeaders() : List<SkillIqLeader>
 
 }
 
