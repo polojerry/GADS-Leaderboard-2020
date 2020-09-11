@@ -2,6 +2,8 @@ package com.polotechnologies.leaderboard.network
 
 import com.polotechnologies.leaderboard.dataModel.LearningLeader
 import com.polotechnologies.leaderboard.dataModel.SkillIqLeader
+import com.polotechnologies.leaderboard.util.Constants.END_POINT_LEARNING_HOURS
+import com.polotechnologies.leaderboard.util.Constants.END_POINT_SKILL_IQ
 import com.polotechnologies.leaderboard.util.Constants.LEADERS_BASE_URL
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -20,10 +22,10 @@ private val retrofit: Retrofit = Retrofit.Builder()
 
 interface LeadersBoardApiService {
 
-    @GET("/api/hours")
+    @GET(END_POINT_LEARNING_HOURS)
     suspend fun learningLeaders(): List<LearningLeader>
 
-    @GET(" /api/skilliq")
+    @GET(END_POINT_SKILL_IQ)
     suspend fun skillIqLeaders(): List<SkillIqLeader>
 
 }

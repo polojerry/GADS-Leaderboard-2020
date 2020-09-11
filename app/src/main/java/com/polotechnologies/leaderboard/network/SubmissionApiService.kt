@@ -1,5 +1,11 @@
 package com.polotechnologies.leaderboard.network
 
+import com.polotechnologies.leaderboard.util.Constants.END_POINT_SUBMISSION
+import com.polotechnologies.leaderboard.util.Constants.FIELD_EMAIL_ADDRESS
+import com.polotechnologies.leaderboard.util.Constants.FIELD_FIRST_NAME
+import com.polotechnologies.leaderboard.util.Constants.FIELD_LAST_NAME
+import com.polotechnologies.leaderboard.util.Constants.FIELD_PROJECT_LINK
+import com.polotechnologies.leaderboard.util.Constants.SUBMISSION_FORM_BASE_URL
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import okhttp3.OkHttpClient
@@ -20,7 +26,7 @@ private val clientBuilder = OkHttpClient.Builder()
     .addInterceptor(loggingInterceptor)
 
 private val retrofit: Retrofit = Retrofit.Builder()
-    .baseUrl("https://docs.google.com/forms/d/e/")
+    .baseUrl(SUBMISSION_FORM_BASE_URL)
     .addConverterFactory(MoshiConverterFactory.create(moshi))
     .client(clientBuilder.build())
     .build()
@@ -28,23 +34,13 @@ private val retrofit: Retrofit = Retrofit.Builder()
 
 interface SubmissionApiService {
 
-    /*@POST("https://docs.google.com/forms/d/e/1FAIpQLSf9d1TcNU6zc6KR8bSEM41Z1g1zl35cwZr2xyjIhaMAz8WChQ/formResponse")
+    @POST(END_POINT_SUBMISSION)
     @FormUrlEncoded
     suspend fun submitProject(
-        @Field("entry.1877115667") firstName : String,
-        @Field("entry.2006916086") lastName : String,
-        @Field("entry.1824927963") emailAddress : String,
-        @Field("entry.284483984") projectLink : String,
-    ): Void*/
-
-
-    @POST("1FAIpQLSfacPHKi4PiLt0NzxgI8KY3aQDE1dTWoUaSOA_iJLJWwWdmHA/formResponse")
-    @FormUrlEncoded
-    suspend fun submitProject(
-        @Field("entry.1405768637") firstName: String,
-        @Field("entry.182464250") lastName: String,
-        @Field("entry.690369363") emailAddress: String,
-        @Field("entry.1405045665") projectLink: String,
+        @Field(FIELD_FIRST_NAME) firstName: String,
+        @Field(FIELD_LAST_NAME) lastName: String,
+        @Field(FIELD_EMAIL_ADDRESS) emailAddress: String,
+        @Field(FIELD_PROJECT_LINK) projectLink: String,
     )
 
 }
