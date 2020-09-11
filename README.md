@@ -22,10 +22,10 @@
 
 # Screens
 
-|<img src= "images/image_1_splash_screen.jpg" width = "300" height = "700">
-|<img src= "images/image_2_learning_leaders.jpg" width = "300" height = "700">
-|<img src= "images/image_3_skill_iq_leaders.jpg" width = "300" height = "700">
-|<img src= "images/image_4_submission.jpg" width = "300" height = "700">
-|<img src= "images/image_5_submission_dialog.jpg" width = "300" height = "700">
-|<img src= "images/image_6_submission_successful.jpg" width = "300" height = "700">
-|<img src= "images/image_7_submission_not_successful.jpg" width = "300" height = "700">
+|<img src= "images/image_1_splash_screen.jpg" width = "280" height = "600">
+|<img src= "images/image_2_learning_leaders.jpg" width = "280" height = "600">
+|<img src= "images/image_3_skill_iq_leaders.jpg" width = "280" height = "600">
+|<img src= "images/image_4_submission.jpg" width = "280" height = "600">
+|<img src= "images/image_5_submission_dialog.jpg" width = "280" height = "600">
+|<img src= "images/image_6_submission_successful.jpg" width = "280" height = "600">
+|<img src= "images/image_7_submission_not_successful.jpg" width = "280" height = "600">
