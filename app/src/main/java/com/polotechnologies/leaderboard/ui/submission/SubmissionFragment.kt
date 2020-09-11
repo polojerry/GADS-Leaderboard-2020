@@ -15,6 +15,7 @@ import com.polotechnologies.leaderboard.databinding.DialogSubmissionSuccessfulBi
 import com.polotechnologies.leaderboard.databinding.DialogSubmitProjectBinding
 import com.polotechnologies.leaderboard.databinding.SubmissionFragmentBinding
 import com.polotechnologies.leaderboard.network.NetworkResponse
+import com.polotechnologies.leaderboard.util.bind
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -70,7 +71,6 @@ class SubmissionFragment : Fragment() {
 
                 is NetworkResponse.Failed -> {
                     showFailureDialog()
-
                 }
             }
 
@@ -92,13 +92,21 @@ class SubmissionFragment : Fragment() {
 
             val submissionDialog = DialogSubmitProjectBinding.inflate(layoutInflater)
             submissionDialog.textLabelSubmitQuestionMark.text = "?"
+            submissionDialog.imageCancelSubmission.setOnClickListener {
+                submitDialog.dismiss()
+                displayInputFields()
+            }
             submissionDialog.buttonSubmitProject.setOnClickListener {
                 submitAndObserve()
                 submitDialog.dismiss()
+                displayInputFields()
             }
+
             builder.setView(submissionDialog.root)
             builder.create()
         }
+
+        hideInputFields()
         submitDialog.show()
     }
 
@@ -112,8 +120,8 @@ class SubmissionFragment : Fragment() {
             builder.setView(failureDialog.root)
             builder.create()
         }
+        hideInputFields()
         alertDialog.show()
-
 
     }
 
@@ -126,6 +134,7 @@ class SubmissionFragment : Fragment() {
             builder.setView(failureDialog.root)
             builder.create()
         }
+        hideInputFields()
         alertDialog.show()
     }
 
@@ -162,4 +171,11 @@ class SubmissionFragment : Fragment() {
 
     }
 
+    private fun hideInputFields(){
+        binding.layoutSubmissionInput.visibility = View.INVISIBLE
+    }
+
+    private fun displayInputFields(){
+        binding.layoutSubmissionInput.visibility = View.VISIBLE
+    }
 }
